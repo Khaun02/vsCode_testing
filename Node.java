@@ -14,15 +14,32 @@ public class Node<T> {
         this.next = null; // sets the next node to be null
     }
 
+    // setter and getter for data
     public T getData() {
         return data;
     }
 
-    public static void main(String[] args) {
-        Node<Integer> nodeInt1 = new Node<Integer>(10);
-        Node<Integer> nodeInt2 = new Node<Integer>(20);
+    public void setData(T data) {
+        this.data = data;
+    }
 
-        System.out.println(nodeInt1.getData());
+    // setter and getter for next node
+    public Node<T> getNext() {
+        return next;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
+    }
+
+    public static void main(String[] args) {
+        Node<Integer> node1 = new Node<Integer>(10);
+        Node<Integer> node2 = new Node<Integer>(20);
+
+        node1.setNext(node2);
+
+        System.out.println("Node 1 Data: " + node1.getData());
+        System.out.println("Node 2 Data: " + node1.getNext().getData());
     }
 }
 
